@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amodaya Wellness Alliance | Premium Professional Network</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --awa-green: #2D5A27;
+            --awa-green-light: #4A7c41;
+            --awa-orange: #F58220;
+            --awa-orange-deep: #e06d06;
+            --awa-gold: #B58E3D;
+            --awa-soft-gold: #FDF5E6;
+            --awa-light-bg: #f8faf7;
+            --text-dark: #1a1a1a;
+            --text-light: #555;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        /* --- Modern Header --- */
+        .main-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 120px;
+            transition: var(--transition);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--awa-green);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--awa-orange);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--awa-orange) 0%, var(--awa-orange-deep) 100%);
+            color: var(--white) !important;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 15px rgba(245, 130, 32, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(245, 130, 32, 0.4);
+        }
+
+        /* --- Animated Hero --- */
+        .hero {
+            padding: 120px 0 100px;
+            text-align: center;
+            background: radial-gradient(circle at top right, #f1f8ef 0%, #ffffff 50%, #fef9f2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            background: rgba(45, 90, 39, 0.03);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: var(--awa-green);
+            margin-bottom: 25px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        h1 span { 
+            color: var(--awa-orange);
+            background: linear-gradient(to right, var(--awa-orange), var(--awa-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sub-headline {
+            font-size: 1.25rem;
+            max-width: 750px;
+            margin: 0 auto 45px;
+            color: var(--text-light);
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--awa-green);
+            color: var(--white);
+            border: 2px solid var(--awa-green);
+        }
+
+        .btn-primary:hover {
+            background: var(--awa-orange);
+            border-color: var(--awa-orange);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(245, 130, 32, 0.3);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--awa-green);
+            color: var(--awa-green);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(45, 90, 39, 0.05);
+            transform: translateY(-5px);
+        }
+
+        /* --- Sections Style --- */
+        section { padding: 100px 0; }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--awa-green);
+            margin-bottom: 60px;
+        }
+
+        .section-title span { color: var(--awa-gold); }
+
+        /* --- About Grid --- */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .card-stack { display: grid; gap: 30px; }
+
+        .card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 10px solid var(--awa-gold);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            width: 100px;
+            height: 100px;
+            background: var(--awa-soft-gold);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .card h3 { color: var(--awa-green); margin-bottom: 15px; position: relative; z-index: 1; }
+        .card p { position: relative; z-index: 1; color: var(--text-light); }
+
+        .card:hover { transform: scale(1.02); }
+
+        /* --- Philosophy Cards --- */
+        .philosophy { background: linear-gradient(135deg, #f4f7f2 0%, #ffffff 100%); }
+
+        .phi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .phi-item {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-bottom: 6px solid transparent;
+        }
+
+        .phi-item:nth-child(1) { border-bottom-color: var(--awa-green); }
+        .phi-item:nth-child(2) { border-bottom-color: var(--awa-orange); }
+        .phi-item:nth-child(3) { border-bottom-color: var(--awa-gold); }
+
+        .phi-item:hover {
+            transform: translateY(-15px);
+            background: var(--awa-green);
+            color: var(--white);
+        }
+
+        .phi-item:hover strong, .phi-item:hover p { color: var(--white); }
+
+        .phi-item strong {
+            display: block;
+            font-size: 1.4rem;
+            color: var(--awa-green);
+            margin-bottom: 20px;
+        }
+
+        /* --- Professionals Tags --- */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tag {
+            background: var(--white);
+            border: 2px solid #eee;
+            color: var(--text-dark);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .tag:hover {
+            background: var(--awa-orange);
+            color: var(--white);
+            border-color: var(--awa-orange);
+            transform: translateY(-3px) rotate(-2deg);
+        }
+
+        /* --- Dark Modern Footer --- */
+        footer {
+            background: #0d1f0b;
+            color: rgba(255,255,255,0.7);
+            padding: 100px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-about img { height: 70px; margin-bottom: 25px; filter: brightness(0) invert(1); }
+
+        .footer-title {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .footer-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 30px;
+            height: 2px;
+            background: var(--awa-orange);
+        }
+
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 15px; }
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover { color: var(--awa-orange); padding-left: 8px; }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
+            .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+            h1 { font-size: 2.8rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 600px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .btn-group { flex-direction: column; }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">
+                <img src="WhatsApp Image 2026-03-13 at 5.23.55 PM.webp" alt="AWA Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#who-can-join">Network</a></li>
+                <li><a href="#" class="nav-cta">Join the Alliance</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>India’s Premier Network for <br><span>Wellness Visionaries</span></h1>
+            <p class="sub-headline">Where high-caliber wellness professionals unite to bridge the gap between ancient wisdom and modern clinical excellence.</p>
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary">Claim Your Membership</a>
+                <a href="#about" class="btn btn-secondary">Discover More</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <div class="grid-2">
+                <div class="about-text">
+                    <h2 class="section-title" style="text-align: left;">Elevating the <span>Wellness Industry</span></h2>
+                    <p>Amodaya Wellness Alliance (AWA) isn't just a directory—it's an ecosystem. We believe that when healers, doctors, and coaches collaborate, the patient wins.</p>
+                    <p>Our platform provides the tools for cross-disciplinary referrals, continuous medical education, and high-impact business networking.</p>
+                </div>
+                <div class="card-stack">
+                    <div class="card">
+                        <h3>The Vision</h3>
+                        <p>To establish the gold standard for integrated wellness services across the Indian subcontinent by 2030.</p>
+                    </div>
+                    <div class="card">
+                        <h3>The Mission</h3>
+                        <p>Empowering 10,000+ certified experts with the networking infrastructure needed to thrive in a digital-first world.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy" id="philosophy">
+        <div class="container">
+            <h2 class="section-title">The AWA <span>Way</span></h2>
+            <div class="phi-grid">
+                <div class="phi-item">
+                    <strong>Unified Growth</strong>
+                    <p>We believe that sharing a client's journey across specialties leads to faster recovery and professional respect.</p>
+                </div>
+                <div class="phi-item">
+                    <strong>Vetted Excellence</strong>
+                    <p>Strict verification protocols ensure that every member of the alliance meets professional standards of practice.</p>
+                </div>
+                <div class="phi-item">
+                    <strong>Impact Driven</strong>
+                    <p>Moving beyond just fitness—we target preventive healthcare to reduce the national burden of lifestyle diseases.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="who-can-join">
+        <div class="container">
+            <h2 class="section-title">Eligible <span>Specialties</span></h2>
+            <div class="tags-container">
+                <span class="tag">Yoga Architects</span>
+                <span class="tag">Ayurvedic Physicians</span>
+                <span class="tag">Clinical Nutritionists</span>
+                <span class="tag">Sports Physiotherapists</span>
+                <span class="tag">Child Psychologists</span>
+                <span class="tag">Mindfulness Coaches</span>
+                <span class="tag">Functional Medicine</span>
+                <span class="tag">Performance Coaches</span>
+                <span class="tag">Holistic Dermatologists</span>
+                <span class="tag">Bio-Hacking Experts</span>
+                <span class="tag">Sleep Therapists</span>
+                <span class="tag">Geriatric Care</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="image_86b3e3.png" alt="AWA Logo">
+                    <p>The Amodaya Wellness Alliance is the backbone of India's professional wellness revolution. Join us in shaping the future of health.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Alliance</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">The Brand</a></li>
+                        <li><a href="#philosophy">Core Ethics</a></li>
+                        <li><a href="#">Member Portal</a></li>
+                        <li><a href="#">Press Kit</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Referral Guide</a></li>
+                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Ethics Board</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Headquarters</h4>
+                    <ul class="footer-links">
+                        <li>Email: connect@amodaya.com</li>
+                        <li>Available Pan-India</li>
+                        <li>Registered Office: Mumbai, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AMODAYA WELLNESS ALLIANCE. BUILT FOR THE ARCHITECTS OF HEALTH.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
